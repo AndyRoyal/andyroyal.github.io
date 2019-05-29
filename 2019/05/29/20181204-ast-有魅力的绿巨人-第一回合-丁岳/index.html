@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="AST 抽象语法树无处不在-第一回合简介：抽象语法树，它以树状的形式表现编程语言的语法结构，树上的每个节点都表示源代码中的一种结构。通过操作这棵树，可以精确的定位到声明、赋值、运算语句，从而实现对代码的优化、变更等操作。 AST 抽象语法树，似乎我们平时并不会接触到。实际上在我们的项目当中，CSS 预处理，JSX 亦或是 TypeScript 的处理，代码格式化美化工具，Eslint， Javas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/05/29/20181204-ast-有魅力的绿巨人-第一回合-丁岳/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="AST 抽象语法树无处不在-第一回合简介：抽象语法树，它以树状的形式表现编程语言的语法结构，树上的每个节点都表示源代码中的一种结构。通过操作这棵树，可以精确的定位到声明、赋值、运算语句，从而实现对代码的优化、变更等操作。 AST 抽象语法树，似乎我们平时并不会接触到。实际上在我们的项目当中，CSS 预处理，JSX 亦或是 TypeScript 的处理，代码格式化美化工具，Eslint， Javas">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://img11.360buyimg.com/uba/jfs/t29965/285/722902525/72447/89fe9e32/5bfca98cN2a4fc2dc.png">
+<meta property="og:image" content="http://img14.360buyimg.com/uba/jfs/t1/8079/13/16060/9637/5c75193fEbfbc926d/b0eb0894b0370be5.png">
+<meta property="og:image" content="http://img14.360buyimg.com/uba/jfs/t26656/262/2307176011/9469/12844ea3/5bfcc13aN0d2bb9a2.png">
+<meta property="og:image" content="http://img12.360buyimg.com/uba/jfs/t30847/232/734714251/110991/96f7e8c6/5bfcb972N9dd3d8cb.png">
+<meta property="og:updated_time" content="2019-02-27T02:43:49.629Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="AST 抽象语法树无处不在-第一回合简介：抽象语法树，它以树状的形式表现编程语言的语法结构，树上的每个节点都表示源代码中的一种结构。通过操作这棵树，可以精确的定位到声明、赋值、运算语句，从而实现对代码的优化、变更等操作。 AST 抽象语法树，似乎我们平时并不会接触到。实际上在我们的项目当中，CSS 预处理，JSX 亦或是 TypeScript 的处理，代码格式化美化工具，Eslint， Javas">
+<meta name="twitter:image" content="http://img11.360buyimg.com/uba/jfs/t29965/285/722902525/72447/89fe9e32/5bfca98cN2a4fc2dc.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-20181204-ast-有魅力的绿巨人-第一回合-丁岳" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/29/20181204-ast-有魅力的绿巨人-第一回合-丁岳/" class="article-date">
+  <time datetime="2019-05-29T06:42:50.168Z" itemprop="datePublished">2019-05-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="AST-抽象语法树无处不在-第一回合"><a href="#AST-抽象语法树无处不在-第一回合" class="headerlink" title="AST 抽象语法树无处不在-第一回合"></a>AST 抽象语法树无处不在-第一回合</h2><p>简介：<br>抽象语法树，它以树状的形式表现编程语言的语法结构，树上的每个节点都表示源代码中的一种结构。<br>通过操作这棵树，可以精确的定位到声明、赋值、运算语句，从而实现对代码的优化、变更等操作。</p>
+<p>AST 抽象语法树，似乎我们平时并不会接触到。实际上在我们的项目当中，CSS 预处理，JSX 亦或是 TypeScript 的处理，代码格式化美化工具，Eslint， Javascript 转译，代码压缩，Webpack， Vue-Cli，ES6 转 ES5，当中都离不开 AST 抽象语法树这个绿巨人。先卖个关子，让我们看一下 AST 到的官方解释：</p>
+<blockquote>
+<p>It is a hierarchical program representation that presents source code structure according to the grammar of a programming language, each AST node corresponds to an item of a source code.</p>
+</blockquote>
+<p>中文的解释有：<br>抽象语法树（abstract syntax tree或者缩写为 AST ），或者语法树（syntax tree），是源代码的抽象语法结构的树状表现形式，这里特指编程语言的源代码。和抽象语法树相对的是具体语法树（concrete syntaxtree），通常称作分析树（parse tree）。一般的，在源代码的翻译和编译过程中，语法分析器创建出分析树。一旦 AST 被创建出来，在后续的处理过程中，比如语义分析阶段，会添加一些信息。<br>抽象语法树，它以树状的形式表现编程语言的语法结构，树上的每个节点都表示源代码中的一种结构。<br>通过操作这棵树，可以精确的定位到声明、赋值、运算语句，从而实现对代码的优化、变更等操作。这些并不是我们想要看到的。</p>
+<p><img src="http://img11.360buyimg.com/uba/jfs/t29965/285/722902525/72447/89fe9e32/5bfca98cN2a4fc2dc.png"></p>
+<p>对于 AST 面纱的神秘感，似乎已经将要揭开。不错，在我刚接触到他的时候，同样感觉确实是难。但是当你开始了解了它以后，你就会越来越喜欢它。<br>因为他实在太强大了。AST 的水深是毋庸置疑的。但是，这才能更加激起我们探索他的欲望。</p>
+<h2 id="一、-一探究竟-AST"><a href="#一、-一探究竟-AST" class="headerlink" title="一、 一探究竟 AST"></a>一、 一探究竟 AST</h2><p>通过 <a href="https://astexplorer.net/" target="_blank" rel="noopener">astexplorer</a> [1] （AST树查看网站），通过他你可以方便的查看代码的语法树，挑你喜欢的库。你可以在线把玩 AST，而且除了 JavaScript，HTML， CSS 还有很多其它语言的 AST 库，让我们对他有一个感性而直观的认识。<br>请看下图，看看AST语法树长什么样子：</p>
+<p><img src="http://img14.360buyimg.com/uba/jfs/t1/8079/13/16060/9637/5c75193fEbfbc926d/b0eb0894b0370be5.png"><br>此图看到的是一个 ExportDefaultDeclaration 也就是export default {}，还有他的位置信息，注释失信，tokens等等。</p>
+<h6 id="国际惯例，先来一个小demo"><a href="#国际惯例，先来一个小demo" class="headerlink" title="国际惯例，先来一个小demo"></a>国际惯例，先来一个小demo</h6><h6 id="输入数据"><a href="#输入数据" class="headerlink" title="输入数据"></a>输入数据</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">square</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> n * n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="处理数据"><a href="#处理数据" class="headerlink" title="处理数据"></a>处理数据</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">astFn() &#123;</span><br><span class="line">    <span class="keyword">const</span> code = <span class="string">`function square(n) &#123;</span></span><br><span class="line"><span class="string">        return n * n;</span></span><br><span class="line"><span class="string">      &#125;`</span>;</span><br><span class="line">    <span class="comment">//得到 AST 语法树</span></span><br><span class="line">    <span class="keyword">const</span> ast = babylon.parse(code);</span><br><span class="line"></span><br><span class="line">    traverse(ast, &#123;</span><br><span class="line">      enter(path) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"enter: "</span> + path.node.type);</span><br><span class="line">        <span class="comment">//如下的语句匹配到 return 中的 n 与参数 n，并且将它替换为 x。</span></span><br><span class="line">        <span class="keyword">if</span> (path.node.type === <span class="string">"Identifier"</span> &amp;&amp; path.node.name === <span class="string">"n"</span>) &#123;</span><br><span class="line">          path.node.name = <span class="string">"x"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    generate(ast, &#123;&#125;, code);<span class="comment">//将 AST 转换为代码</span></span><br><span class="line">    <span class="built_in">console</span>.log(generate(ast, &#123;&#125;, code).code );<span class="comment">//打印出转换后的 JavaScript 代码</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h6 id="输出数据"><a href="#输出数据" class="headerlink" title="输出数据"></a>输出数据</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">square</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们看一下我们得到的 AST 树<br><br><img src="http://img14.360buyimg.com/uba/jfs/t26656/262/2307176011/9469/12844ea3/5bfcc13aN0d2bb9a2.png"><br></p>
+<h2 id="二、-简单粗暴的版本"><a href="#二、-简单粗暴的版本" class="headerlink" title="二、 简单粗暴的版本"></a>二、 简单粗暴的版本</h2><p>没有使用 AST 将 VUE 组件转换成小程序组件的简易版本介绍<br>下方是两段代码，简单的逻辑，实现思路，匹配目标字符串，替换字符，然后生成文件。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">regs:&#123;<span class="comment">//通过标签匹配来替换对应的小程序支持的标签</span></span><br><span class="line">  toViewStartTags: <span class="regexp">/(&lt;h1)|(&lt;s)|(&lt;em)|(&lt;ul)|(&lt;li)|(&lt;dl)|(&lt;i)|(&lt;span)/g</span>,</span><br><span class="line">  toViewEndTags: <span class="regexp">/(&lt;\/h1&gt;)|(&lt;\/s&gt;)|(&lt;\/em&gt;)|(&lt;\/ul&gt;)|(&lt;\/li&gt;)|(&lt;\/dl&gt;)|(&lt;\/i&gt;)|(&lt;\/span&gt;)/g</span>,</span><br><span class="line">  toBlockStartTags: <span class="regexp">/(&lt;div)|(&lt;p)/g</span>,</span><br><span class="line">  toBlockEndTags: <span class="regexp">/(&lt;\/div&gt;)|(&lt;\/p&gt;)/g</span>,</span><br><span class="line">&#125;,</span><br><span class="line">signObj: &#123;<span class="comment">//通过标签查找来分离脚本，模板和CSS</span></span><br><span class="line">  tempStart: <span class="string">'&lt;template&gt;'</span>,</span><br><span class="line">  tempEnd: <span class="string">'&lt;/template&gt;'</span>,</span><br><span class="line">  styleStart: <span class="string">'&lt;style scoped&gt;'</span>,</span><br><span class="line">  styleEnd: <span class="string">'&lt;/style&gt;'</span>,</span><br><span class="line">  scriptStart: <span class="string">'&lt;script&gt;'</span>,</span><br><span class="line">  scriptEnd: <span class="string">'&lt;/script&gt;'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上方是正则版本的一些模板匹配规则，经过后续的一系列处理把一个 VUE组件处理得到对应的小程序的 WXML ，WXSS，JSON，JS，4个文件。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//文件</span></span><br><span class="line"><span class="keyword">const</span> wxssFilePath = path.join(dirPath, <span class="string">`<span class="subst">$&#123;mpFile&#125;</span>.wxss`</span>);</span><br><span class="line"><span class="keyword">const</span> jsFilePath = path.join(dirPath, <span class="string">`<span class="subst">$&#123;mpFile&#125;</span>.js`</span>);</span><br><span class="line"><span class="keyword">const</span> wxmlFilePath = path.join(dirPath, <span class="string">`<span class="subst">$&#123;mpFile&#125;</span>.wxml`</span>);</span><br><span class="line"><span class="keyword">const</span> jsonFilePath = path.join(dirPath, <span class="string">`<span class="subst">$&#123;mpFile&#125;</span>.json`</span>);</span><br><span class="line"><span class="keyword">if</span> (!fs.existsSync(dirPath)) &#123;</span><br><span class="line">  fs.mkdirSync(dirPath);</span><br><span class="line">&#125;</span><br><span class="line">fs.writeFile(wxssFilePath, wxssContent, err =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">  <span class="comment">//console.log(`dist目录下生成$&#123;mpFile&#125;.wxss文件成功`);</span></span><br><span class="line">  fs.writeFile(jsFilePath, jsContent, err =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">       <span class="comment">// console.log(`dist目录下生成$&#123;mpFile&#125;.js文件成功`);</span></span><br><span class="line">        fs.writeFile(wxmlFilePath, wxmlContent, err =&gt; &#123;</span><br><span class="line">          <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">          <span class="comment">//console.log(`dist目录下生成$&#123;mpFile&#125;.wxml文件成功`);</span></span><br><span class="line">          fs.writeFile(jsonFilePath, jsonContent, err =&gt; &#123;</span><br><span class="line">            <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">           <span class="built_in">console</span>.log(<span class="string">`dist目录下生成<span class="subst">$&#123;mpFile&#125;</span>.json文件成功`</span>)</span><br><span class="line">            resolve(<span class="string">`生成<span class="subst">$&#123;mpFile&#125;</span>.json文件成功`</span>);</span><br><span class="line">          &#125;)</span><br><span class="line">       &#125;)</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>上方是处理得到的 WXML ，WXSS，JSON，JS，4个文件，并且生成到对应的目录下。代码实现用时较短，后续更改方案，并没有做优化，这里就不做详细展开讨论这个实现方案了。</p>
+<h2 id="三、-AST-三大法宝"><a href="#三、-AST-三大法宝" class="headerlink" title="三、 AST 三大法宝"></a>三、 AST 三大法宝</h2><p>Babel 是 JavaScript 编译器，更确切地说是源码到源码的编译器，通常也叫做“ 转换编译器（transpiler）”。 意思是说你为 Babel 提供一些 JavaScript 代码，Babel 更改这些代码，然后返回给你新生成的代码。</p>
+<p>babel-core：Babel 的编译器；它暴露了 babel.transform 方法。</p>
+<p>[1] babylon：Babylon 是 Babel 的解析器。用于生成 AST 语法树。</p>
+<p>[2] babel-traverse：Babel 的遍历器，所有的transformers都使用该工具遍历所有的 AST (抽象语法树)，维护了整棵树的状态，并且负责替换、移除和添加节点。我们可以和 Babylon 一起使用来遍历和更新节点。</p>
+<p>[3] babel-generator：Babel 的代码生成器。它读取AST并将其转换为代码。</p>
+<p>整个编译器就被分成了三部分：分析器、转换器、生成器，大致的流程是：</p>
+<p>输入字符串 -&gt; babylon分析器 parse -&gt; 得到 AST -&gt; 转换器 -&gt; 得到 AST -&gt; babel-generator -&gt; 输出</p>
+<h5 id="总结核心三步："><a href="#总结核心三步：" class="headerlink" title="总结核心三步："></a>总结核心三步：</h5><p>AST 三大法宝<br>babylon.parse =&gt;  traverse 转换 AST =&gt;  generate(ast, {}, code).code) 生成</p>
+<p>感兴趣的童鞋，可以在网上或者看参考资料都有介绍，这里篇幅有限，感兴趣我们下回详细展开。</p>
+<h2 id="四、-AST-到底怎么转换呢？"><a href="#四、-AST-到底怎么转换呢？" class="headerlink" title="四、 AST 到底怎么转换呢？"></a>四、 AST 到底怎么转换呢？</h2><p>使用 AST 将 VUE 组件转换为小程序组件的部分实现。<br>今天我们主要分析 JavaScript 的部分处理。</p>
+<h6 id="转换之前的-VUE-组件代码-Demo"><a href="#转换之前的-VUE-组件代码-Demo" class="headerlink" title="转换之前的 VUE 组件代码 Demo"></a>转换之前的 VUE 组件代码 Demo</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">              <span class="comment">//组件的对外属性</span></span><br><span class="line">              props: &#123;</span><br><span class="line">                  max: &#123;</span><br><span class="line">                      type: <span class="built_in">Number</span>,</span><br><span class="line">                      value: <span class="number">99</span></span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;,</span><br><span class="line">              <span class="comment">//组件的内部数据</span></span><br><span class="line">              data()&#123;</span><br><span class="line">                  <span class="keyword">return</span> &#123;</span><br><span class="line">                    num:<span class="number">10000</span></span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;,</span><br><span class="line">              <span class="comment">//组件的方法</span></span><br><span class="line">              methods: &#123;</span><br><span class="line">                 textFn() &#123;</span><br><span class="line">                   <span class="keyword">this</span>.num = <span class="number">2</span></span><br><span class="line">                &#125;,</span><br><span class="line">                 onMyButtonTap: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                  <span class="keyword">this</span>.num = <span class="number">666</span></span><br><span class="line">                &#125;,</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
+<h6 id="处理后我们得到的小程序组件-JavaScript-部分代码"><a href="#处理后我们得到的小程序组件-JavaScript-部分代码" class="headerlink" title="处理后我们得到的小程序组件 JavaScript 部分代码"></a>处理后我们得到的小程序组件 JavaScript 部分代码</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  properties: &#123;</span><br><span class="line">    <span class="comment">//组件的对外属性</span></span><br><span class="line">    max: &#123;</span><br><span class="line">      type: <span class="built_in">Number</span>,</span><br><span class="line">      value: <span class="number">99</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"> <span class="comment">//组件的内部数据</span></span><br><span class="line"> data()&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      num: <span class="number">10000</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//组件的方法</span></span><br><span class="line">  methods: &#123;</span><br><span class="line">    textFn() &#123;</span><br><span class="line">      <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">        num: <span class="number">2</span></span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    onMyButtonTap: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">        num: <span class="number">666</span></span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h6 id="我们对js动了什么手脚-亦可封装成babel插件"><a href="#我们对js动了什么手脚-亦可封装成babel插件" class="headerlink" title="我们对js动了什么手脚(亦可封装成babel插件):"></a>我们对js动了什么手脚(亦可封装成babel插件):</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//to AST</span></span><br><span class="line"><span class="keyword">const</span> ast = babylon.parse(code, &#123;</span><br><span class="line">  sourceType: <span class="string">"module"</span>,</span><br><span class="line">  plugins: [<span class="string">"flow"</span>]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//AST 转换 node，nodetype很关键</span></span><br><span class="line">traverse(ast, &#123;</span><br><span class="line">   enter(path) &#123;</span><br><span class="line">     <span class="comment">//打印出node.type</span></span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">"enter: "</span> + path.node.type);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ObjectProperty(path) &#123;</span><br><span class="line">   <span class="comment">//props 替换为 properties</span></span><br><span class="line">    <span class="keyword">if</span> (path.node.key.name === <span class="string">"props"</span>) &#123;</span><br><span class="line">      path.node.key.name = <span class="string">"properties"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//修改methods中使用到数据属性的方法中。this.prop至this.data.prop等 与 this.setData的处理  感兴趣的童鞋可以尝试一下，代码仅供参考，提供一个思路，实际使用请详细阅读相关的文档来处理。</span></span><br><span class="line">MemberExpression(path) &#123;</span><br><span class="line"> <span class="keyword">let</span> datasVals =  datas.map(<span class="function">(<span class="params">item,index</span>) =&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> item.key.name <span class="comment">//拿到data属性中的第一级</span></span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">if</span> (<span class="comment">//含有this的表达式 并且包含data属性</span></span><br><span class="line">    path.node.object.type === <span class="string">"ThisExpression"</span> &amp;&amp;</span><br><span class="line">    datasVals.includes(path.node.property.name)</span><br><span class="line">  ) &#123;</span><br><span class="line">   path.get(<span class="string">"object"</span>).replaceWithSourceString(<span class="string">"this.data"</span>);</span><br><span class="line">    <span class="comment">//判断是不是赋值操作</span></span><br><span class="line">    <span class="keyword">if</span> (</span><br><span class="line">      (t.isAssignmentExpression(path.parentPath) &amp;&amp;</span><br><span class="line">        path.parentPath.get(<span class="string">"left"</span>) === path) ||</span><br><span class="line">      t.isUpdateExpression(path.parentPath)</span><br><span class="line">    ) &#123;</span><br><span class="line">      <span class="keyword">const</span> expressionStatement = path.findParent(<span class="function"><span class="params">parent</span> =&gt;</span></span><br><span class="line">        parent.isExpressionStatement()</span><br><span class="line">      );</span><br><span class="line">      <span class="comment">//篇幅有限 省略部分</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="转换之前的js代码的部分-AST-树："><a href="#转换之前的js代码的部分-AST-树：" class="headerlink" title="转换之前的js代码的部分 AST 树："></a>转换之前的js代码的部分 AST 树：</h6><p><img src="http://img12.360buyimg.com/uba/jfs/t30847/232/734714251/110991/96f7e8c6/5bfcb972N9dd3d8cb.png"><br></p>
+<h6 id="具体的-API-使用，童鞋们看一下babel相关的文档了解一下，一回生，二回熟嘛。"><a href="#具体的-API-使用，童鞋们看一下babel相关的文档了解一下，一回生，二回熟嘛。" class="headerlink" title="具体的 API 使用，童鞋们看一下babel相关的文档了解一下，一回生，二回熟嘛。"></a>具体的 API 使用，童鞋们看一下babel相关的文档了解一下，一回生，二回熟嘛。</h6><h2 id="五、总结："><a href="#五、总结：" class="headerlink" title="五、总结："></a>五、总结：</h2><p>通过以上我们的介绍，我们大概对抽象语法树有了初步的了解。总体思路是：我们用Babel的解析器 把 JavaScript 源码转化为抽象语法树，<br>再通过 Babel 的遍历器遍历 AST (抽象语法树)，替换、移除和添加节点，得到一个新的 AST 树。最后， 使用，Babel 的代码生成器 Babel Generator模块 读取 处理后的 AST 并将其转换为代码。任务就完成了！</p>
+<p>本文对于 VUE 组件转换为小程序组件的转换部分包括如下内容：</p>
+<ol>
+<li>VUE 组件对外属性转换为小程序对外属性的处理</li>
+<li>VUE 组件内部数据的转换为小程序内部数据的处理</li>
+<li>VUE 组件中 methods 中的赋值语句转换为小程序赋值语句的处理简单介绍<br>具体转换过程中涉及到的问题还有很多，有机会再做展开！<br>感谢大家的耐心阅读，希望本文对大家有所帮助，在技术探索的路上，我们一往无前。<br>也欢迎大家关注【全栈探索公众号】，每周都会有技术好文推出！</li>
+</ol>
+<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><p>[1] <a href="https://astexplorer.net/" target="_blank" rel="noopener">https://astexplorer.net/</a></p>
+<p>[2] <a href="https://babeljs.io/docs/en/next/babel-types.html#objectexpression" target="_blank" rel="noopener">https://babeljs.io/docs/en/next/babel-types.html#objectexpression</a> </p>
+<p>[3] <a href="https://github.com/babel/babel/tree/6.x/packages/babel-types" target="_blank" rel="noopener">https://github.com/babel/babel/tree/6.x/packages/babel-types</a></p>
+<p>[4] <a href="http://esprima.org/demo/parse.html#" target="_blank" rel="noopener">http://esprima.org/demo/parse.html#</a></p>
+<p>[5] <a href="https://segmentfault.com/a/1190000014178462?utm_source=tag-newest" target="_blank" rel="noopener">https://segmentfault.com/a/1190000014178462?utm_source=tag-newest</a></p>
+<p>[6] <a href="https://zh.wikipedia.org/wiki/%E6%8A%BD%E8%B1%A1%E8%AA%9E%E6%B3%95%E6%A8%B9" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/%E6%8A%BD%E8%B1%A1%E8%AA%9E%E6%B3%95%E6%A8%B9</a></p>
+<p>[7] <a href="https://itnext.io/ast-for-javascript-developers-3e79aeb08343" target="_blank" rel="noopener">https://itnext.io/ast-for-javascript-developers-3e79aeb08343</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/29/20181204-ast-有魅力的绿巨人-第一回合-丁岳/" data-id="cjw8v7oyy0000vwjtspdxofs6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/29/20181204-使用AST将VUE组件转换为微信小程序组件-丁岳/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/29/20180709-函数式编程的四特征-丁岳/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/29/ast-有魅力的绿巨人-第二回合-丁岳/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/29/20181204-使用AST将VUE组件转换为微信小程序组件-丁岳/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/29/20181204-ast-有魅力的绿巨人-第一回合-丁岳/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/29/20180709-函数式编程的四特征-丁岳/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
