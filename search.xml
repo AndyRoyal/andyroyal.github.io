@@ -2,13 +2,13 @@
 <search>
   <entry>
     <title></title>
-    <url>%2F2019%2F05%2F30%2Fvue%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7%2F</url>
-    <content type="text"><![CDATA[vue-devtools 从chrome应用市场安装或者通过github clone 导入插件 界面功能介绍 从左向右，依次简单介绍一下2.1 components 显示当前点击组件的可用数据,并可以修改和添加，修改可实时反应在界面中，非常方便调试一些业务流程比较繁琐，可以任意展示其中的一步操作的界面 2.2 vuex 使用vuex时，这里可以方便查看state,mutaitons, action等信息 2.3 events 记录事件，比如点击事件，当你点击之后，这里会显示出来点击事件来源于哪一个组件，以及事件名等信息 2.4 Routing 记录路由的变化，以及路由相关信息。下拉routes 可以列出当前应用所有的路由 2.5 performance 性能监控 2.6 setting 皮肤设置等 2.7 Refresh 刷新]]></content>
+    <url>%2F2019%2F07%2F10%2F%E5%89%8D%E7%AB%AF%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F-%E6%AC%A2%E8%BF%8E%E5%85%B3%E6%B3%A8%2F</url>
+    <content type="text"><![CDATA[前端知乎专栏-欢迎关注 https://zhuanlan.zhihu.com/dingyue]]></content>
   </entry>
   <entry>
     <title></title>
-    <url>%2F2019%2F05%2F29%2Ftest%2F</url>
-    <content type="text"><![CDATA[test11]]></content>
+    <url>%2F2019%2F05%2F30%2Fvue%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7%E4%B9%8Bvue-devtools%2F</url>
+    <content type="text"><![CDATA[vue-devtools 从chrome应用市场安装或者通过github clone 导入插件 界面功能介绍 给大客培训准备的PPT转成了md 从左向右，依次简单介绍一下2.1 components 显示当前点击组件的可用数据,并可以修改和添加，修改可实时反应在界面中，非常方便调试一些业务流程比较繁琐，可以任意展示其中的一步操作的界面 2.2 vuex 使用vuex时，这里可以方便查看state,mutaitons, action等信息 2.3 events 记录事件，比如点击事件，当你点击之后，这里会显示出来点击事件来源于哪一个组件，以及事件名等信息 2.4 Routing 记录路由的变化，以及路由相关信息。下拉routes 可以列出当前应用所有的路由 2.5 performance 性能监控 2.6 setting 皮肤设置等 2.7 Refresh 刷新]]></content>
   </entry>
   <entry>
     <title></title>
