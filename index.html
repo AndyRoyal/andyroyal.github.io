@@ -75,11 +75,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="前端知乎专栏-欢迎关注"><a href="#前端知乎专栏-欢迎关注" class="headerlink" title="前端知乎专栏-欢迎关注"></a>前端知乎专栏-欢迎关注</h2><p>  <a href="https://zhuanlan.zhihu.com/dingyue" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/dingyue</a></p>
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=34383004&auto=1&height=66"></iframe>
+
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://andyroyal.github.io/2019/07/10/前端知乎专栏-欢迎关注/" data-id="cjxx79s9z0005ewjtdqa4bofz" class="article-share-link">Share</a>
+      <a data-url="http://andyroyal.github.io/2019/07/10/前端知乎专栏-欢迎关注/" data-id="cjxzvlgxu0004pcjt9jxxsol8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -101,7 +104,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="vue-devtools"><a href="#vue-devtools" class="headerlink" title="vue-devtools"></a>vue-devtools</h2><ol>
+        <h2 id="vue-devtools"><a href="#vue-devtools" class="headerlink" title="vue-devtools"></a>vue-devtools</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=34383004&auto=1&height=66"></iframe></p>
+<ol>
 <li>从chrome应用市场安装或者通过github clone 导入插件</li>
 <li>界面功能介绍</li>
 </ol>
@@ -116,7 +120,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://andyroyal.github.io/2019/05/30/vue调试技巧之vue-devtools/" data-id="cjxx79s9y0004ewjt0ikl8wdx" class="article-share-link">Share</a>
+      <a data-url="http://andyroyal.github.io/2019/05/30/vue调试技巧之vue-devtools/" data-id="cjxzvlgxt0003pcjt3v3jb3hf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -138,7 +142,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="AST-抽象语法树无处不在-第二回合"><a href="#AST-抽象语法树无处不在-第二回合" class="headerlink" title="AST 抽象语法树无处不在-第二回合"></a>AST 抽象语法树无处不在-第二回合</h2><h2 id="一，Export-Default-到-Component-构造器的转换"><a href="#一，Export-Default-到-Component-构造器的转换" class="headerlink" title="一，Export Default 到 Component 构造器的转换"></a>一，Export Default 到 Component 构造器的转换</h2><p>接着上回（AST 抽象语法树无处不在-第一回合）我们继续 VUE 组件转换为小程序组件中的 JavaScript 部分的转换。<br>首先我们看一下要转换前后的语法树与代码如下（明确转换目标）：</p>
+        <h2 id="AST-抽象语法树无处不在-第二回合"><a href="#AST-抽象语法树无处不在-第二回合" class="headerlink" title="AST 抽象语法树无处不在-第二回合"></a>AST 抽象语法树无处不在-第二回合</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=34383004&auto=1&height=66"></iframe></p>
+<h2 id="一，Export-Default-到-Component-构造器的转换"><a href="#一，Export-Default-到-Component-构造器的转换" class="headerlink" title="一，Export Default 到 Component 构造器的转换"></a>一，Export Default 到 Component 构造器的转换</h2><p>接着上回（AST 抽象语法树无处不在-第一回合）我们继续 VUE 组件转换为小程序组件中的 JavaScript 部分的转换。<br>首先我们看一下要转换前后的语法树与代码如下（明确转换目标）：</p>
 <h6 id="转换之前的-AST-树与代码"><a href="#转换之前的-AST-树与代码" class="headerlink" title="转换之前的 AST 树与代码"></a>转换之前的 AST 树与代码</h6><p><img src="http://img11.360buyimg.com/uba/jfs/t29581/123/1031219550/7088/28f16ea1/5c05dddfN076efa20.png"></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;<span class="comment">// VUE 组件的惯用写法用于导出对象模块</span></span><br><span class="line">    data()&#123;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">    &#125;,</span><br><span class="line">    props:&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h6 id="转换之后的-AST-树与代码"><a href="#转换之后的-AST-树与代码" class="headerlink" title="转换之后的 AST 树与代码"></a>转换之后的 AST 树与代码</h6><p><img src="http://img11.360buyimg.com/uba/jfs/t26155/227/2594893184/9762/8d47d607/5c05dddfNe823c12a.png"></p>
@@ -182,7 +187,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://andyroyal.github.io/2019/05/29/ast-有魅力的绿巨人-第二回合-丁岳/" data-id="cjxx79s9u0001ewjti9k24syt" class="article-share-link">Share</a>
+      <a data-url="http://andyroyal.github.io/2019/05/29/ast-有魅力的绿巨人-第二回合-丁岳/" data-id="cjxzvlgxs0002pcjtd8tf6jq4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -204,7 +209,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="通过操作抽象语法树将-VUE-组件转换为微信小程序组件"><a href="#通过操作抽象语法树将-VUE-组件转换为微信小程序组件" class="headerlink" title="通过操作抽象语法树将 VUE 组件转换为微信小程序组件"></a>通过操作抽象语法树将 VUE 组件转换为微信小程序组件</h2><p>简介：<br>首先我们介绍一下本文的关键点：抽象语法树，它是以树状的形式表现编程语言的语法结构，树上的每个节点都表示源代码中的一种结构。<br>通过操作这棵树，可以精确的定位到声明、赋值、运算语句，从而实现对代码的优化、变更等操作。<br>本文通过对 VUE 组件的 JavaScript 、CSS模块进行转换，比如 JavaScript模块，包括外层对象，生命周期钩子函数，赋值语句，组件的内部数据，组件的对外属性等等来实现把一个 VUE 组件转换为 一个小程序组件。</p>
+        <h2 id="通过操作抽象语法树将-VUE-组件转换为微信小程序组件"><a href="#通过操作抽象语法树将-VUE-组件转换为微信小程序组件" class="headerlink" title="通过操作抽象语法树将 VUE 组件转换为微信小程序组件"></a>通过操作抽象语法树将 VUE 组件转换为微信小程序组件</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=34383004&auto=1&height=66"></iframe><br>简介：<br>首先我们介绍一下本文的关键点：抽象语法树，它是以树状的形式表现编程语言的语法结构，树上的每个节点都表示源代码中的一种结构。<br>通过操作这棵树，可以精确的定位到声明、赋值、运算语句，从而实现对代码的优化、变更等操作。<br>本文通过对 VUE 组件的 JavaScript 、CSS模块进行转换，比如 JavaScript模块，包括外层对象，生命周期钩子函数，赋值语句，组件的内部数据，组件的对外属性等等来实现把一个 VUE 组件转换为 一个小程序组件。</p>
 <p>AST 抽象语法树，似乎我们平时并不会接触到。实际上在我们的项目当中，CSS 预处理，JSX 亦或是 TypeScript 的处理，代码格式化美化工具，Eslint， Javascript 转译，代码压缩，Webpack， Vue-Cli，ES6 转 ES5，当中都离不开 AST 抽象语法树这个绿巨人。先卖个关子，让我们看一下 AST 到的官方解释：</p>
 <blockquote>
 <p>It is a hierarchical program representation that presents source code structure according to the grammar of a programming language, each AST node corresponds to an item of a source code.</p>
@@ -293,7 +298,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://andyroyal.github.io/2019/05/29/20181204-使用AST将VUE组件转换为微信小程序组件-丁岳/" data-id="cjxx79s9w0002ewjtaycale27" class="article-share-link">Share</a>
+      <a data-url="http://andyroyal.github.io/2019/05/29/20181204-使用AST将VUE组件转换为微信小程序组件-丁岳/" data-id="cjxzvlgxl0000pcjtl8tcb0ud" class="article-share-link">Share</a>
       
       
     </footer>
@@ -315,7 +320,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="AST-抽象语法树无处不在-第一回合"><a href="#AST-抽象语法树无处不在-第一回合" class="headerlink" title="AST 抽象语法树无处不在-第一回合"></a>AST 抽象语法树无处不在-第一回合</h2><p>简介：<br>抽象语法树，它以树状的形式表现编程语言的语法结构，树上的每个节点都表示源代码中的一种结构。<br>通过操作这棵树，可以精确的定位到声明、赋值、运算语句，从而实现对代码的优化、变更等操作。</p>
+        <h2 id="AST-抽象语法树无处不在-第一回合"><a href="#AST-抽象语法树无处不在-第一回合" class="headerlink" title="AST 抽象语法树无处不在-第一回合"></a>AST 抽象语法树无处不在-第一回合</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=34383004&auto=1&height=66"></iframe><br>简介：<br>抽象语法树，它以树状的形式表现编程语言的语法结构，树上的每个节点都表示源代码中的一种结构。<br>通过操作这棵树，可以精确的定位到声明、赋值、运算语句，从而实现对代码的优化、变更等操作。</p>
 <p>AST 抽象语法树，似乎我们平时并不会接触到。实际上在我们的项目当中，CSS 预处理，JSX 亦或是 TypeScript 的处理，代码格式化美化工具，Eslint， Javascript 转译，代码压缩，Webpack， Vue-Cli，ES6 转 ES5，当中都离不开 AST 抽象语法树这个绿巨人。先卖个关子，让我们看一下 AST 到的官方解释：</p>
 <blockquote>
 <p>It is a hierarchical program representation that presents source code structure according to the grammar of a programming language, each AST node corresponds to an item of a source code.</p>
@@ -368,7 +373,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://andyroyal.github.io/2019/05/29/20181204-ast-有魅力的绿巨人-第一回合-丁岳/" data-id="cjxx79s9x0003ewjtrvmlasfl" class="article-share-link">Share</a>
+      <a data-url="http://andyroyal.github.io/2019/05/29/20181204-ast-有魅力的绿巨人-第一回合-丁岳/" data-id="cjxzvlgxq0001pcjtv798sz93" class="article-share-link">Share</a>
       
       
     </footer>
@@ -515,7 +520,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://andyroyal.github.io/2019/05/29/20180709-函数式编程的四特征-丁岳/" data-id="cjxx79s9q0000ewjtps573yu1" class="article-share-link">Share</a>
+      <a data-url="http://andyroyal.github.io/2019/05/29/20180709-函数式编程的四特征-丁岳/" data-id="cjxzvlgxv0005pcjto9ge7gb8" class="article-share-link">Share</a>
       
       
     </footer>
